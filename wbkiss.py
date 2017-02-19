@@ -23,14 +23,14 @@ class NavigateurMain(Gtk.Window):
         
     def on_key_press(self, widget, event):
         ''' keyboard shortcut  ctrl+letter '''
-        mapping = {Gdk.KEY_q: Gtk.main_quit,
+        shortcutlist = {Gdk.KEY_q: Gtk.main_quit,
                     Gdk.KEY_g: self.web_cmd_home,
                         Gdk.KEY_r: self.web_cmd_reload,
                             Gdk.KEY_b: self.web_cmd_last,
                                 Gdk.KEY_n: self.web_cmd_next}
         if event.state & Gdk.ModifierType.CONTROL_MASK:
-            if event.keyval in mapping:
-                mapping[event.keyval]()
+            if event.keyval in shortcutlist:
+                shortcutlist[event.keyval]()
 
     # Webkit command
     def web_cmd_home(self):
