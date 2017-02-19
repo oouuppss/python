@@ -41,6 +41,9 @@ class NavigateurMain(Gtk.Window):
         self.web_view.go_back()
     def web_cmd_next(self):
         self.web_view.go_forward()
+        
+    def initial_show(self):
+        window.show_all() 
 
 if __name__ == '__main__':
     window = NavigateurMain()
